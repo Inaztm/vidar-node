@@ -71,6 +71,7 @@ const vidarNode = async ({
   await page.goto(`file://${path.join(__dirname, 'page.html')}`)
   await page.evaluate(() => {
     window._doneExporting = false
+    window._movieSettings = movieSettings;
   })
 
   // Send assets using data urls
@@ -112,8 +113,6 @@ const vidarNode = async ({
       window._doneExporting = true
     })
   })
-
-  await page.exposeFunction('movieSettings', movieSettings);
 
   await page.evaluate(vidarFunction)
   await page.waitFor(() => window._doneExporting, { timeout: 0 })
