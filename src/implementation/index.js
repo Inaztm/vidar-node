@@ -54,7 +54,13 @@ const getMetadata = async (page, id, source) => {
  * @property {string} type - the MIME type of the media
  * @property {Buffer} data
  */
-const vidarNode = async (vidarFunction, inputSources, resultCallbackOrPath, page=undefined) => {
+const vidarNode = async ({
+  vidarFunction,
+  inputSources,
+  resultCallbackOrPath,
+  page=undefined,
+  movieSettings = {}
+}) => {
   // Set up page
   let browser
   if (!page) {
@@ -106,6 +112,8 @@ const vidarNode = async (vidarFunction, inputSources, resultCallbackOrPath, page
       window._doneExporting = true
     })
   })
+
+  await page.exposeFunction('movieSettings', movieSettings);
 
   await page.evaluate(vidarFunction)
   await page.waitFor(() => window._doneExporting, { timeout: 0 })
