@@ -59,7 +59,7 @@ const vidarNode = async ({
   inputSources,
   resultCallbackOrPath,
   page=undefined,
-  movieSettings = {}
+  movieState = {}
 }) => {
   // Set up page
   let browser
@@ -69,9 +69,9 @@ const vidarNode = async ({
   }
   redirectConsoleOutput(page)
   await page.goto(`file://${path.join(__dirname, 'page.html')}`)
-  await page.evaluateOnNewDocument((_movieSettings) => {
-    window.movieSettings = _movieSettings;
-  }, movieSettings);
+  await page.evaluateOnNewDocument((_movieState) => {
+    window.movieState = _movieState;
+  }, movieState);
   await page.evaluate(() => {
     window._doneExporting = false
   })
