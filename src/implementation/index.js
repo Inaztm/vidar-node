@@ -69,9 +69,7 @@ const vidarNode = async ({
   }
   redirectConsoleOutput(page)
   await page.goto(`file://${path.join(__dirname, 'page.html')}`)
-  await page.evaluate((movieSettings) => {
-    window._movieSettings = movieSettings;
-  }, movieSettings)
+  await page.exposeFunction('getMovieSettings', () => movieSettings)
   await page.evaluate(() => {
     window._doneExporting = false
   })
