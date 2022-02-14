@@ -69,10 +69,10 @@ const vidarNode = async ({
   }
   redirectConsoleOutput(page)
   await page.goto(`file://${path.join(__dirname, 'page.html')}`)
-  await page.evaluate(() => {
+  await page.evaluate((movieSettings) => {
     window._doneExporting = false
     window._movieSettings = movieSettings;
-  })
+  }, movieSettings)
 
   // Send assets using data urls
   for (let id in inputSources) {
