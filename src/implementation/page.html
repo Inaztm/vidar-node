@@ -30,10 +30,11 @@
         var that = this
         var args = arguments
         return new Promise(function (resolve, reject) {
-          vd.Movie.prototype.record.apply(that, args)
+          vd.Movie.prototype.recordHight.apply(that, args)
             .then(function (blob) {
-              readBlob(blob).then(resolve)
+              readBlob(blob).then(resolve).catch(reject)
             })
+            .catch(reject)
         })
       }
     })()
