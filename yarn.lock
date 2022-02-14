@@ -296,9 +296,10 @@ util-deprecate@^1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-"vidar@https://github.com/Inaztm/vidar":
-  version "0.7.0"
-  resolved "https://github.com/Inaztm/vidar#f84c1e363062283bfbfcb54106e02fc9fd5bd8e3"
+vidar@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vidar/-/vidar-0.6.0.tgz#a58fa5954f29bf6d3003d9c9a5759e7dc7822b0e"
+  integrity sha512-kK8WNHFsgxOpoSVCzcbaRxFvkgEpGezhqa11XHWxQ3+1Co+qdEEQR8nrfh0dGivXMlBSd2lCM3+e+fSS1NuyCw==
 
 wrappy@1:
   version "1.0.2"
