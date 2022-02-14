@@ -32,7 +32,7 @@
         var that = this
         var args = arguments
         return new Promise(function (resolve, reject) {
-          vd.IMovie.prototype.recordHight.apply(that, args)
+          vd.Movie.prototype.record.apply(that, args)
             .then(function (blob) {
               readBlob(blob).then(resolve).catch(reject)
             })
