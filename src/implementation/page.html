@@ -26,17 +26,7 @@
        *
        * @return {Promise<number[]>} the byte array
        */
-      vd.Movie.prototype.recordRaw = function () {
-        var that = this
-        var args = arguments
-        return new Promise(function (resolve, reject) {
-          vd.Movie.prototype.recordHight.apply(that, args)
-            .then(function (blob) {
-              readBlob(blob).then(resolve).catch(reject)
-            })
-            .catch(reject)
-        })
-      }
+      vd.readBlob = readBlob;
     })()
   </script>
 </head>
