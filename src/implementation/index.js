@@ -69,7 +69,7 @@ const vidarNode = async ({
   }
   redirectConsoleOutput(page)
   await page.goto(`file://${path.join(__dirname, 'page.html')}`)
-  await page.evaluateOnNewDocument((_movieState) => {
+  await page.evaluate((_movieState) => {
     window.movieState = _movieState;
   }, movieState);
   await page.evaluate(() => {
