@@ -18,6 +18,8 @@
         })
       }
 
+      vd.readBlob = readBlob;
+
       // Until Vidar supports exporting streams, use this custom method.
       /**
        * Exports the movie as a byte array
@@ -37,8 +39,6 @@
             .catch(reject)
         })
       }
-
-      vd.readBlob = readBlob;
     })()
   </script>
 </head>
