@@ -298,7 +298,7 @@ util-deprecate@^1.0.1:
 
 "vidar@https://github.com/Inaztm/vidar":
   version "0.7.0"
-  resolved "https://github.com/Inaztm/vidar#ee979b3d5b69a6246152a16995e1f1a74286ea5e"
+  resolved "https://github.com/Inaztm/vidar#f84c1e363062283bfbfcb54106e02fc9fd5bd8e3"
 
 wrappy@1:
   version "1.0.2"
